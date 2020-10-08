@@ -35,11 +35,11 @@ nav {
 
 .top-nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
   color: white;
-  font-size: 18px;  
+  font-size: 18px;
   max-width: 980px;
   width: 95%;
   margin: 0 auto;
@@ -97,9 +97,12 @@ main {
 }
 
 .overlay.ipsum {
-  display: none;
   color: #ff0000a1;
   border-color: #ff0000a1;
+}
+
+.overlay.lorem {
+  display: none;
 }
 
 /* CAT GALLERY */
@@ -114,7 +117,9 @@ main {
 }
 
 .cat {
-  width: 200px;
+  display: flex;
+  width: 100%;
+  gap: 10px;
 }
 
 .text {
@@ -123,36 +128,41 @@ main {
 }
 
 .cat h3 {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
-
-@media screen and (max-width: 630px) {
-  .cat {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-  }
-
-  .cat h3 {
-    margin-top: 0;
-  }
+.second {
+  flex-direction: row-reverse;
 }
 
-@media screen and (max-width: 465px) {
+@media screen and (min-width: 465px) {
   .top-nav {
-    flex-direction: column;
-  }
-  
-  .overlay.lorem {
-    display: none;
+    flex-direction: row;
   }
 
   .overlay.ipsum {
+    display: none;
+  }
+
+  .overlay.lorem {
     display: block;
   }
 
-  .cat.second {
-    flex-direction: row-reverse;   
+  .second {
+    flex-direction: row;
   }
+}
+
+@media screen and (min-width: 630px) {
+
+  .cat h3 {
+    margin-top: 10px;
+  }
+
+  .cat {
+    width: 200px;
+    flex-direction: column;
+  }
+
+
 }
